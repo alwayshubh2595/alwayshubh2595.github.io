@@ -1,10 +1,126 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My First Website</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shubh Srivastava's Personal Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        section {
+            padding: 20px;
+        }
+        h2 {
+            color: #4CAF50;
+        }
+        .content {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+        .content div {
+            background-color: white;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 30%;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to My First Website!</h1>
-    <p>This website is hosted on GitHub Pages. 😊</p>
+
+<header>
+    <h1>Welcome to Shubh Srivastava's Personal Website</h1>
+</header>
+
+<nav>
+    <a href="#about">About Me</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+    <a href="#socials">Social Media</a>
+</nav>
+
+<section id="about">
+    <h2>About Me</h2>
+    <p>Hello! I'm Shubh Srivastava, a first-year engineering student at BITS Pilani. I'm passionate about AI/ML, finance, and electronics. I'm currently working on various projects to improve my skills and gain more experience in these areas. I believe in constant learning and love diving into new topics such as quantum computing.</p>
+</section>
+
+<section id="projects">
+    <h2>My Projects</h2>
+    <div class="content">
+        <div>
+            <h3>Intra-Rover Communication System</h3>
+            <p>I'm building a system using Arduinos for communication and control between rover modules. It involves motor control, sensor data transmission, and a PID controller to stabilize the RPM of motors.</p>
+        </div>
+        <div>
+            <h3>Machine Learning</h3>
+            <p>Currently, I'm taking the Machine Learning Specialization by Andrew Ng and reading books like 'The Hundred-Page Machine Learning Book' to improve my ML knowledge.</p>
+        </div>
+        <div>
+            <h3>Finance</h3>
+            <p>I'm learning more about finance and stock markets, and I have already invested in stocks like HDFC as part of my practical learning process.</p>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact Me</h2>
+    <p>You can reach out to me through the following:</p>
+    <ul>
+        <li>Email: <a href="mailto:shubh@example.com">shubh@example.com</a></li>
+        <li>Phone: +91-XXXXXXXXXX</li>
+    </ul>
+</section>
+
+<section id="socials">
+    <h2>Social Media</h2>
+    <p>Follow me on:</p>
+    <ul>
+        <li><a href="https://www.linkedin.com/in/shubh-srivastava" target="_blank">LinkedIn</a></li>
+        <li><a href="https://twitter.com/shubh_sriv" target="_blank">Twitter</a></li>
+        <li><a href="https://github.com/shubh-sriv" target="_blank">GitHub</a></li>
+    </ul>
+</section>
+
+<footer>
+    <p>Shubh Srivastava &copy; 2025</p>
+</footer>
+
 </body>
 </html>
