@@ -1,234 +1,242 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="description" content="About Shubh Srivastava – AI/ML-minded engineering student at BITS Pilani. Projects, contact and socials in one scroll.">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shubh Srivastava · About Me</title>
+  <meta charset="UTF-8">
+  <meta name="description"
+        content="About Shubh Srivastava – AI/ML-minded engineering student at BITS Pilani. Projects, reading, music, contact and socials in one scroll.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shubh Srivastava · About Me</title>
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-    <!-- Font Awesome icons (optional) -->
-    <script src="https://kit.fontawesome.com/a4d9f8f0dc.js" crossorigin="anonymous"></script>
+  <!-- Font Awesome (icons) -->
+  <script src="https://kit.fontawesome.com/a4d9f8f0dc.js" crossorigin="anonymous"></script>
 
-    <style>
-        /* ——— Base ——— */
-        :root{
-            --primary:#4CAF50;
-            --primary-dark:#3CB371;
-            --bg-light:#f0f2f5;
-            --bg-gradient:linear-gradient(to bottom,#f0f2f5,#add8e6);
-            --text:#333;
-        }
-        html{scroll-behavior:smooth;}
-        body{
-            font-family:'Poppins',sans-serif;
-            background:var(--bg-gradient);
-            margin:0;
-            color:var(--text);
-            transition:background .3s,color .3s;
-        }
-        a{color:var(--primary);text-decoration:none;transition:color .3s;}
-        a:hover{color:var(--primary-dark);}
-        .sr-only{
-            position:absolute;
-            left:-10000px;
-            width:1px;height:1px;
-            overflow:hidden;
-        }
+  <style>
+    /* ---------- Theme tokens ---------- */
+    :root{
+      --primary:#4CAF50;
+      --primary-dark:#3CB371;
+      --bg-gradient:linear-gradient(to bottom,#f0f2f5,#add8e6);
+      --text:#333;
+    }
+    html{scroll-behavior:smooth;}
+    body{
+      font-family:'Poppins',sans-serif;
+      margin:0;
+      background:var(--bg-gradient);
+      color:var(--text);
+      transition:background .3s,color .3s;
+    }
+    a{color:var(--primary);text-decoration:none;transition:color .3s;}
+    a:hover{color:var(--primary-dark);}
+    .sr-only{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden;}
 
-        /* ——— Dark mode ——— */
-        .dark{
-            --bg-gradient:linear-gradient(to bottom,#0d1117,#161b22);
-            --bg-light:#161b22;
-            --text:#c9d1d9;
-        }
-        .dark body{background:var(--bg-gradient);color:var(--text);}
-        .dark header{background:var(--bg-light);}
-        .dark nav{background:#0d1117;}
-        .dark .card{background:#161b22;border:1px solid #30363d;}
-        .dark h2{color:var(--primary);}
-        .dark a:hover{color:#58d79e;}
+    /* ---------- Dark-mode overrides ---------- */
+    .dark{
+      --bg-gradient:linear-gradient(to bottom,#0d1117,#161b22);
+      --text:#c9d1d9;
+    }
+    .dark body{background:var(--bg-gradient);color:var(--text);}
+    .dark header{background:#161b22;}
+    .dark nav{background:#0d1117;}
+    .dark .card{background:#161b22;border:1px solid #30363d;}
+    .dark h2{color:var(--primary);}
+    .dark a:hover{color:#58d79e;}
 
-        /* ——— Hero ——— */
-        header{
-            text-align:center;
-            padding:80px 20px 60px;
-            background:linear-gradient(135deg,var(--primary),var(--primary-dark));
-            color:#fff;
-            position:relative;
-        }
-        .avatar{
-            width:140px;height:140px;
-            border-radius:50%;
-            object-fit:cover;
-            border:4px solid #fff;
-            margin-bottom:20px;
-        }
-        .tagline{margin-top:8px;font-weight:300;font-size:1.1rem;}
-        .cta{
-            display:inline-block;margin-top:22px;
-            background:#fff;color:var(--primary-dark);
-            font-weight:600;padding:10px 26px;
-            border-radius:25px;transition:transform .2s;
-        }
-        .cta:hover{transform:translateY(-3px);}
+    /* ---------- Hero ---------- */
+    header{
+      position:relative;
+      text-align:center;
+      padding:80px 20px 60px;
+      background:linear-gradient(135deg,var(--primary),var(--primary-dark));
+      color:#fff;
+    }
+    .avatar{
+      width:140px;height:140px;
+      border-radius:50%;
+      object-fit:cover;
+      border:4px solid #fff;
+      margin-bottom:20px;
+    }
+    .tagline{margin-top:8px;font-weight:300;font-size:1.1rem;}
+    .cta{
+      display:inline-block;
+      margin-top:22px;
+      background:#fff;
+      color:var(--primary-dark);
+      font-weight:600;
+      padding:10px 26px;
+      border-radius:25px;
+      transition:transform .2s;
+    }
+    .cta:hover{transform:translateY(-3px);}
 
-        /* Dark-mode toggle button */
-        #themeToggle{
-            position:absolute;top:20px;right:20px;
-            background:rgba(255,255,255,.25);
-            border:none;border-radius:50%;
-            width:40px;height:40px;
-            font-size:1.1rem;cursor:pointer;
-            color:#fff;
-            backdrop-filter:blur(4px);
-            transition:background .3s,transform .2s;
-        }
-        #themeToggle:hover{background:rgba(255,255,255,.4);transform:scale(1.08);}
+    /* Dark-mode toggle */
+    #themeToggle{
+      position:absolute;top:20px;right:20px;
+      width:40px;height:40px;
+      border:none;border-radius:50%;
+      background:rgba(255,255,255,.25);
+      color:#fff;font-size:1.1rem;cursor:pointer;
+      backdrop-filter:blur(4px);
+      transition:background .3s,transform .2s;
+    }
+    #themeToggle:hover{background:rgba(255,255,255,.4);transform:scale(1.08);}
 
-        /* ——— Navigation ——— */
-        nav{
-            background:#333;display:flex;
-            justify-content:center;gap:15px;
-            padding:12px 0;
-        }
-        nav a{
-            color:#fff;padding:9px 18px;
-            border-radius:5px;transition:background .3s;
-        }
-        nav a:hover{background:var(--primary);}
+    /* ---------- Navigation ---------- */
+    nav{
+      background:#333;
+      display:flex;justify-content:center;gap:15px;
+      padding:12px 0;
+    }
+    nav a{
+      color:#fff;padding:9px 18px;
+      border-radius:5px;transition:background .3s;
+    }
+    nav a:hover{background:var(--primary);}
+    @media(max-width:768px){nav a{padding:8px 15px;}}
 
-        /* ——— Sections ——— */
-        main{padding:0 10%;}
-        section{padding:60px 0;}
-        h2{
-            color:var(--primary-dark);
-            font-size:2rem;margin:0 0 26px;
-            border-bottom:2px solid var(--primary);
-            display:inline-block;
-        }
+    /* ---------- Layout ---------- */
+    main{padding:0 10%;}
+    section{padding:60px 0;}
+    h2{
+      color:var(--primary-dark);
+      font-size:2rem;
+      margin:0 0 26px;
+      border-bottom:2px solid var(--primary);
+      display:inline-block;
+    }
 
-        /* ——— Cards ——— */
-        .cards{
-            display:flex;flex-wrap:wrap;
-            gap:24px;justify-content:center;
-        }
-        .card{
-            background:#fff;padding:22px;
-            border-radius:12px;
-            box-shadow:0 6px 12px rgba(0,0,0,.1);
-            width:30%;min-width:280px;
-            transition:transform .3s,box-shadow .3s;
-        }
-        .card:hover{
-            transform:translateY(-5px);
-            box-shadow:0 8px 16px rgba(0,0,0,.15);
-        }
-        @media(min-width:1024px){.card{width:23%;}}
-        @media(max-width:768px){
-            nav a{padding:8px 15px;}
-            .card{width:100%;}
-        }
+    /* ---------- Cards ---------- */
+    .cards{display:flex;flex-wrap:wrap;gap:24px;justify-content:center;}
+    .card{
+      background:#fff;padding:22px;
+      border-radius:12px;
+      box-shadow:0 6px 12px rgba(0,0,0,.1);
+      width:30%;min-width:280px;
+      transition:transform .3s,box-shadow .3s;
+    }
+    .card:hover{transform:translateY(-5px);box-shadow:0 8px 16px rgba(0,0,0,.15);}
+    @media(min-width:1024px){.card{width:23%;}}
+    @media(max-width:768px){.card{width:100%;}}
 
-        /* ——— Footer ——— */
-        footer{
-            background:#333;color:#fff;
-            text-align:center;padding:26px 0;
-            font-size:.9rem;margin-top:40px;
-        }
-    </style>
+    /* ---------- Footer ---------- */
+    footer{
+      background:#333;color:#fff;
+      text-align:center;
+      padding:26px 0;
+      font-size:.9rem;
+      margin-top:40px;
+    }
+  </style>
 </head>
 <body>
 
-<!-- Skip link for accessibility -->
 <a href="#about" class="sr-only">Skip to main content</a>
 
-<!-- ——— Hero ——— -->
+<!-- ---------- Hero ---------- -->
 <header>
-    <button id="themeToggle" aria-label="Toggle dark mode">🌙</button>
-
-    <img src="profile.jpg" alt="Shubh smiling" class="avatar">
-    <h1>Hi, I’m <span class="highlight">Shubh Srivastava</span></h1>
-    <p class="tagline">Engineering @ BITS • AI/ML buff • Finance-curious</p>
-    <a href="#contact" class="cta">Let’s connect</a>
+  <button id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+  <img src="assets/profile.jpg" alt="Shubh smiling" class="avatar">
+  <h1>Hi, I’m <span class="highlight">Shubh Srivastava</span></h1>
+  <p class="tagline">Engineering @ BITS • AI/ML buff • Finance-curious</p>
+  <a href="#contact" class="cta">Let’s connect</a>
 </header>
 
-<!-- ——— Nav ——— -->
+<!-- ---------- Navigation ---------- -->
 <nav>
-    <a href="#about">About Me</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-    <a href="#socials">Socials</a>
+  <a href="#about">About Me</a>
+  <a href="#projects">Projects</a>
+  <a href="#music">Music</a>
+  <a href="#contact">Contact</a>
+  <a href="#socials">Socials</a>
 </nav>
 
 <main>
 
-    <!-- About -->
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Hello! I’m Shubh Srivastava, a first-year engineering student at BITS Pilani. I’m passionate about AI/ML, finance, and electronics. I dive into new topics—from quantum computing to value investing—and share my learning journey along the way.</p>
-    </section>
+  <!-- About -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Hello! I’m Shubh Srivastava, a first-year engineering student at BITS Pilani. I’m passionate about AI/ML, finance, and electronics. I dive into new topics—from quantum computing to value investing—and share my learning journey along the way.</p>
+  </section>
 
-    <!-- Projects -->
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="cards">
-            <div class="card">
-                <h3>Machine Learning Journey</h3>
-                <p>Taking Andrew Ng’s ML Specialization and dissecting papers like <em>Deep Residual Learning</em> while building mini-experiments in Python.</p>
-            </div>
-            <div class="card">
-                <h3>Finance Deep Dive</h3>
-                <p>Writing professional stock reports (e.g., Laurus Labs) and running a 15-day active swing-trading challenge to apply fundamentals in real markets.</p>
-            </div>
-            <div class="card">
-                <h3>Personal Portfolio Site</h3>
-                <p>This very page—coded from scratch, responsive, with dark mode and smooth scrolling. Continuous-deployment via GitHub Pages.</p>
-            </div>
-        </div>
-    </section>
+  <!-- Projects & Interests -->
+  <section id="projects">
+    <h2>Projects & Interests</h2>
+    <div class="cards">
 
-    <!-- Contact -->
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Feel free to reach out:</p>
-        <ul>
-            <li>Email: <a href="mailto:shubhmanish2525@gmail.com">shubhmanish2525@gmail.com</a></li>
-            <li>Phone: <a href="tel:+918108100192">+91 810 810 0192</a></li>
-        </ul>
-    </section>
+      <div class="card">
+        <h3>AI/ML Learning Journey</h3>
+        <p>Deep interest in the evolving AI landscape, with constant effort to stay updated on recent advancements. Currently pursuing Andrew Ng’s Machine Learning Specialization, complemented by reading research papers and foundational texts like <em>The Hundred-Page Machine Learning Book</em> and <em>The AI Supremacy</em> by Parmy Olson.</p>
+      </div>
 
-    <!-- Socials -->
-    <section id="socials">
-        <h2>Social Media</h2>
-        <p>Connect with me online:</p>
-        <ul>
-            <li><i class="fab fa-linkedin"></i>  <a href="https://www.linkedin.com/in/shubh-srivastava-06a636322/">LinkedIn</a></li>
-            <li><i class="fab fa-twitter"></i>  <a href="https://twitter.com/shubh_sriv" target="_blank">Twitter</a></li>
-            <li><i class="fab fa-github"></i>  <a href="https://github.com/shubh-sriv" target="_blank">GitHub</a></li>
-        </ul>
-    </section>
+      <div class="card">
+        <h3>Finance & Markets Exploration</h3>
+        <p>Actively studying both technical and fundamental analysis, with a focus on practical application in equity markets. Preparing for the NISM Research Analyst certification while maintaining a core investing strategy centered around index funds and long-term financial literacy.</p>
+      </div>
+
+      <div class="card">
+        <h3>Reading & Thought Exploration</h3>
+        <p>I love reading across disciplines—whether it's self-help, philosophy, or tech. Some books that really left an impact on me include <em>Ikigai</em>, <em>The Art of Thinking Clearly</em>, <em>The Courage to Be Disliked</em>, <em>The AI Supremacy</em>, <em>The Coming Wave</em>, <em>Quantum Computing for Everyone</em>, and <em>Source Code</em>. Reading helps me slow down, think deeper, and explore ideas that shape how I see the world.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Music -->
+  <section id="music">
+    <h2>Currently Listening</h2>
+    <div style="display:flex;justify-content:center;">
+      <!-- Spotify embed -->
+      <iframe style="border-radius:12px"
+              src="https://open.spotify.com/embed/track/0VjIjW4GlUZAMYd2vXMi3b?utm_source=generator"
+              width="100%" height="352" frameborder="0" loading="lazy"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Feel free to reach out:</p>
+    <ul>
+      <li>Email: <a href="mailto:shubhmanish2525@gmail.com">shubhmanish2525@gmail.com</a></li>
+      <li>Phone: <a href="tel:+918108100192">+91 810 810 0192</a></li>
+    </ul>
+  </section>
+
+  <!-- Socials -->
+  <section id="socials">
+    <h2>Social Media</h2>
+    <p>Connect with me online:</p>
+    <ul>
+      <li><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/shubh-srivastava-06a636322/">LinkedIn</a></li>
+      <li><i class="fab fa-twitter"></i>  <a href="https://twitter.com/shubh_sriv" target="_blank">Twitter</a></li>
+      <li><i class="fab fa-github"></i>   <a href="https://github.com/shubh-sriv" target="_blank">GitHub</a></li>
+    </ul>
+  </section>
 
 </main>
 
+<!-- ---------- Footer ---------- -->
 <footer>
-    <p>&copy; 2025 Shubh Srivastava</p>
+  <p>&copy; 2025 Shubh Srivastava</p>
 </footer>
 
 <!-- Dark-mode script -->
 <script>
-const toggle = document.getElementById('themeToggle');
-const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-if(prefersDark) document.body.classList.add('dark');
-
-toggle.addEventListener('click',()=>{
+  const toggle = document.getElementById('themeToggle');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  if (prefersDark) document.body.classList.add('dark');
+  toggle.addEventListener('click', () => {
     document.body.classList.toggle('dark');
-});
+  });
 </script>
 
 </body>
 </html>
+
